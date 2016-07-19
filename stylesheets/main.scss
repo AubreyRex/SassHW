@@ -1,0 +1,33 @@
+
+@import 'ji';
+
+
+
+
+
+@mixin variable($color, $size)
+{
+	background-color:$color;
+	height:$size;
+}
+@mixin variableOne($background-color, $margin-left){
+	background-color:$background-color;
+	margin-left:$margin-left;
+}
+/* this is the second variable not the first */
+	.jid{
+	@include variableOne("green","44px")};
+	/* apparently I can't add add an include and another style below it bummer*/
+	
+.hi{ @include variable ("pink", "30px")};
+.pdf {
+	@extend .hi;
+	color: blue;
+}
+h1{
+	color:shade(red, 50%);
+}
+h4{
+		color:tint(pink, 50%);
+
+}
